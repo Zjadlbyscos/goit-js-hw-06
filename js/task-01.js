@@ -1,8 +1,10 @@
-const items = document.querySelectorAll(".item");
 
-console.log(`Number of categories: ${items.length}`);
+const elemByItems = document.querySelectorAll(".item");
 
-for (const item of items) {
-  console.log(`Category: ${item.firstElementChild.textContent}`);
-  console.log(`Elements: ${item.lastElementChild.children.length}`);
-}
+console.log(`Number of categories: ${elemByItems.length}`);
+
+elemByItems.forEach (item =>{
+  // Znajdujemy nagłówek h2 wewnątrz elementu li.item
+  console.log(`Category: ${item.querySelector('h2').textContent}`)
+  console.log(`Elements; ${item.querySelectorAll('li').length}`)
+})
